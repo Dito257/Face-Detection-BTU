@@ -1,14 +1,24 @@
+#შემოგვაქვს საჭირო ბიბლიოთეკები
+
 import numpy as np
 import cv2
 
+#ყველა შესაძლებელი ნაწილის განსაზღვრის კასკადი
+
 # multiple cascades: https://github.com/Itseez/opencv/tree/master/data/haarcascades
+
+#ვამატებთ კასკადებს რომლებიც მოგვეხმარებიან ნაწილის დადგენაში
 
 # https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 # https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_eye.xml
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
+#ვიდეოკამერა(0-default(კომპს რაც მოყვება))
+
 cap = cv2.VideoCapture(0)
+
+#ვადგენთ ციკლებს რათა შევქმნათ ჩარჩოები სახისა და თვალების გარშემო
 
 while 1:
     ret, img = cap.read()
